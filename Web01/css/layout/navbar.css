@@ -1,0 +1,100 @@
+﻿.navbar {
+  width: 200px;
+  height: 100vh;
+  border: 1px solid gray;
+}
+
+.navbar-header {
+  width: 100%;
+  height: 60px;
+  display: flex;
+  align-items: center;
+}
+
+.navbar-header .subnav {
+  width: 30px;
+  height: 30px;
+  background-image: url('/content/img/toggle.png');
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  margin: 16px;
+}
+
+.navbar-header .logo {
+  width: 170px;
+  height: 30px;
+  background-image: url('/content/img/cukcuk-logo.png');
+  background-position: left;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.navbar-menu {
+  width: 100%;
+  height: calc(100% - 60px);
+}
+
+.navbar-menu-item {
+  width: 100%;
+  height: 60px;
+  align-items: center;
+  display: flex;
+}
+
+.navbar-menu-item .context-item {
+  width: 170px;
+  height: 30px;
+  margin-left: 16px;
+  padding-top: 12px;
+}
+
+.navbar-menu-item .logo-item .item1 {
+  margin-left: 16px;
+  width: 30px;
+  height: 30px;
+  background-image: url('/content/icon/dashboard.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.navbar-menu-item .logo-item .item2 {
+  margin-left: 16px;
+  width: 30px;
+  height: 30px;
+  background-image: url('/content/icon/dic-employee.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.navbar-menu-item .logo-item .item3 {
+  margin-left: 16px;
+  width: 30px;
+  height: 30px;
+  background-image: url('/content/icon/document-online.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.navbar-menu-item .logo-item .item4 {
+  margin-left: 16px;
+  width: 30px;
+  height: 30px;
+  background-image: url('/content/icon/setting.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.navbar-menu-item .logo-item .item5 {
+  margin-left: 16px;
+  width: 30px;
+  height: 30px;
+  background-image: url('/content/icon/btn-next-page.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}

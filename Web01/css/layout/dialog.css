@@ -1,0 +1,262 @@
+.dialog .model {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: black;
+  width: 100%;
+  height: 100vh;
+  opacity: 40%;
+}
+
+.dialog .dialog-content {
+  position: fixed;
+  background-color: white;
+  height: 550px;
+  width: 600px;
+  top: calc(50% - 300px);
+  left: calc(50% - 300px);
+  padding-left: 24px;
+}
+
+.dialog .dialog-content .header {
+  display: flex;
+  width: auto;
+  height: 60px;
+  left: 24px;
+  right: 0;
+  border: none;
+}
+
+.dialog .dialog-content .header .exit {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  right: 0;
+  font-size: 20px;
+  text-align: center;
+  border-radius: 4px 0px 0px 4px;
+  border: none;
+  outline: none;
+}
+
+.dialog .dialog-content .header .exit:hover {
+  background-color: gray;
+}
+
+.dialog .dialog-content .body {
+  position: absolute;
+  top: 60px;
+  height: 200px;
+  width: 600px;
+}
+
+.dialog .dialog-content .body .img {
+  height: 150px;
+  width: 200px;
+  background-image: url('/content/icon/avatar-default.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+
+.dialog .dialog-content .body .notify {
+  width: 200px;
+  height: 50px;
+  text-align: center;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.dialog .dialog-content .body .inform1 {
+  top: 0;
+  position: absolute;
+  width: 400px;
+  height: 200px;
+  left: 200px;
+}
+
+.dialog .dialog-content .body .inform1 .line1 {
+  width: 400px;
+  height: 60px;
+  margin-bottom: 10px;
+  display: flex;
+}
+
+.dialog .dialog-content .body .inform1 .line1 .line1-left {
+  width: 200px;
+  height: 60px;
+}
+
+.dialog .dialog-content .body .inform1 .line1 .line1-left #ma {
+  height: 28px;
+}
+
+.dialog .dialog-content .body .inform1 .line1 .line1-right {
+  width: 200px;
+  height: 60px;
+}
+
+.dialog .dialog-content .body .inform1 .line1 .line1-right #ten {
+  height: 28px;
+}
+
+.dialog .dialog-content .body .inform1 .line2 {
+  display: flex;
+  width: 400px;
+  height: 60px;
+  margin-bottom: 10px;
+}
+
+.dialog .dialog-content .body .inform1 .line2 .line2-left {
+  width: 200px;
+  height: 60px;
+}
+
+.dialog .dialog-content .body .inform1 .line2 .line2-left #mathe {
+  height: 28px;
+}
+
+.dialog .dialog-content .body .inform1 .line2 .line2-right {
+  width: 200px;
+  height: 60px;
+}
+
+.dialog .dialog-content .body .inform1 .line2 .line2-right #nhom {
+  width: 178px;
+  height: 34px;
+}
+.dialog .dialog-content .body .inform1 .line3 {
+  display: flex;
+  width: 400px;
+  height: 60px;
+}
+
+.dialog .dialog-content .body .inform1 .line3 .line3-left {
+  width: 200px;
+  height: 60px;
+}
+
+.dialog .dialog-content .body .inform1 .line3 .line3-left #ngaysinh {
+  height: 28px;
+  width: 173px;
+}
+
+.dialog .dialog-content .body .inform1 .line3 .line3-right .radio-btn {
+  display: flex;
+  align-items: center;
+  height: 32px;
+}
+
+.dialog .dialog-content .body2 {
+  top: 260px;
+  position: absolute;
+  width: 600px;
+  height: 200px;
+}
+
+.dialog .dialog-content .body2 .line1 {
+  display: flex;
+  align-items: center;
+  width: 600px;
+  height: 60px;
+  margin-bottom: 10px;
+}
+
+.dialog .dialog-content .body2 .line1 .line1-left {
+  width: 400px;
+  height: 60px;
+}
+
+.dialog .dialog-content .body2 .line1 .line1-left #email {
+  height: 28px;
+  width: 362px;
+  padding-left: 10px;
+}
+
+.dialog .dialog-content .body2 .line1 .line1-right {
+  width: 200px;
+  height: 60px;
+}
+
+.dialog .dialog-content .body2 .line1 .line1-right #sdt {
+  height: 28px;
+}
+
+.dialog .dialog-content .body2 .line2 {
+  display: flex;
+  align-items: center;
+  width: 600px;
+  height: 60px;
+  margin-bottom: 10px;
+}
+
+.dialog .dialog-content .body2 .line2 .line2-left {
+  width: 400px;
+  height: 60px;
+}
+
+.dialog .dialog-content .body2 .line2 .line2-left #tencty {
+  height: 28px;
+  width: 371px;
+}
+
+.dialog .dialog-content .body2 .line2 .line2-right {
+  width: 200px;
+  height: 60px;
+}
+
+.dialog .dialog-content .body2 .line2 .line2-right #msthue {
+  height: 28px;
+  padding-left: 10px;
+  width: 161px;
+}
+
+.dialog .dialog-content .body2 .line3 {
+  width: 600px;
+  height: 60px;
+}
+
+.dialog .dialog-content .body2 .line3 #address {
+  width: 570px;
+  height: 28px;
+}
+
+.dialog .dialog-content .footer {
+  margin-left: -24px;
+  position: absolute;
+  display: flex;
+  justify-content: flex-end;
+  top: 500px;
+  width: 624px;
+  height: 50px;
+  background-color: rgb(216, 216, 216);
+}
+
+.dialog .dialog-content .footer .cancel {
+  width: 50px;
+  height: 50px;
+  text-align: center;
+  line-height: 50px;
+  border: none;
+  outline: none;
+  background-color: #d8d8d8;
+}
+
+.dialog .dialog-content .footer .cancel:hover {
+  background-color: gray;
+}
+
+.dialog .dialog-content .footer .btn-save {
+  width: 80px;
+  height: 30px;
+  margin: 10px 21px 10px 10px;
+  border-radius: 4px;
+  background-color: rgb(9, 177, 9);
+  background-image: url('/content/icon/document-online.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  border: none;
+  cursor: pointer;
+}

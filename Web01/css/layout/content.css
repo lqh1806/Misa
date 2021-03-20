@@ -1,0 +1,213 @@
+﻿.content {
+  width: calc(100% - 200px);
+  height: calc(100vh - 60px);
+  top: 60px;
+  left: 200px;
+  position: absolute;
+}
+
+.content .list-name {
+  font-size: 24px;
+  font-weight: bold;
+  margin: 16px 0px 0px 16px;
+  width: 250px;
+  height: 30px;
+}
+
+.content .btn-them {
+  position: absolute;
+  display: flex;
+  width: 150px;
+  height: 30px;
+  background-color: green;
+  top: 16px;
+  right: 16px;
+  text-align: center;
+  line-height: 30px;
+  color: white;
+  align-items: center;
+  outline: none;
+  border: none;
+}
+
+.content .btn-them:hover {
+  background-color: darkolivegreen;
+}
+
+.content .btn-them .icon-them {
+  width: 20px;
+  height: 20px;
+  background-image: url('/content/icon/add.png');
+  background-size: contain;
+  background-position: center;
+  margin-left: 5px;
+}
+
+.content .search {
+  width: 250px;
+  height: 50px;
+  margin-left: 16px;
+}
+.content .search .search-icon {
+  margin-top: 18px;
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background-image: url('/content/icon/search.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.content .search #input-search {
+  margin-top: 16px;
+  width: 190px;
+  height: 20px;
+  padding-left: 18px;
+}
+
+.content .reload {
+  position: absolute;
+  width: 40px;
+  height: 30px;
+  background-image: url('/content/icon/refresh.png');
+  background-repeat: no-repeat;
+  background-size: 20px 20px;
+  background-position: center;
+  border: 1px solid gray;
+  top: 58px;
+  right: 16px;
+}
+
+.content .grid {
+  height: 500px;
+  overflow-y: scroll;
+}
+
+.content table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 16px;
+  margin-left: 16px;
+}
+
+.content table th {
+  text-align: left;
+}
+
+.content table td {
+  border-bottom: 1px solid gray;
+  padding: 10px 1px;
+}
+
+.content .hienthi {
+  display: flex;
+  justify-content: space-between;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.content .hienthi .hienthi1 {
+  padding-left: 16px;
+  width: 250px;
+  margin: 20px 0px;
+}
+
+.content .hienthi .hienthi2 {
+  float: right;
+  padding-right: 16px;
+  width: 250px;
+  margin: 20px 0px;
+  text-align: right;
+}
+
+.content .hienthi .btn-page {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 400px;
+  height: 57px;
+}
+
+.content .hienthi .btn-page .button {
+  height: 20px;
+  width: 20px;
+}
+
+.content .hienthi .btn-page .button1 {
+  height: 20px;
+  width: 20px;
+  background-image: url('/content/icon/btn-next-page.svg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.content .hienthi .btn-page .button2 {
+  height: 20px;
+  width: 20px;
+  background-image: url('/content/icon/btn-lastpage.svg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.content .hienthi .btn-page .button:nth-child(1) {
+  background-image: url('/content/icon/btn-firstpage.svg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.content .hienthi .btn-page .button:nth-child(2) {
+  background-image: url('/content/icon/btn-prev-page.svg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.content .hienthi .btn-page .num1 {
+  width: 20px;
+  height: 20px;
+  border: 1px solid gray;
+  background-color: rgb(170, 168, 168);
+  text-decoration: none;
+  color: black;
+  border-radius: 50%;
+  display: inline-block;
+  text-align: center;
+}
+.content .hienthi .btn-page .num2 {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  display: inline-block;
+  text-align: center;
+  border: 1px solid gray;
+  background-color: rgb(170, 168, 168);
+  text-decoration: none;
+  color: black;
+}
+.content .hienthi .btn-page .num3 {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  display: inline-block;
+  text-align: center;
+  border: 1px solid gray;
+  background-color: rgb(170, 168, 168);
+  text-decoration: none;
+  color: black;
+}
+.content .hienthi .btn-page .num4 {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  display: inline-block;
+  text-align: center;
+  border: 1px solid gray;
+  background-color: rgb(170, 168, 168);
+  text-decoration: none;
+  color: black;
+}

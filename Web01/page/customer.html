@@ -1,0 +1,231 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Quản lý khách hàng - CUKCUK.VN</title>
+    <link rel="stylesheet" href="/css/main2.css" />
+    <link rel="stylesheet" href="/css/layout/content.css" />
+    <link rel="stylesheet" href="/css/layout/header.css" />
+    <link rel="stylesheet" href="/css/layout/navbar.css" />
+    <link rel="stylesheet" href="/css/layout/dialog.css" />
+</head>
+<body>
+    <div class="navbar">
+        <div class="navbar-header">
+            <div class="subnav"></div>
+            <div class="logo"></div>
+        </div>
+        <div class="navbar-menu">
+            <div class="navbar-menu-item">
+                <div class="logo-item">
+                    <div class="item1"></div>
+                </div>
+                <div class="context-item">Tong quan</div>
+            </div>
+            <div class="navbar-menu-item">
+                <div class="logo-item">
+                    <div class="item2"></div>
+                </div>
+                <div class="context-item">Bao cao</div>
+            </div>
+            <div class="navbar-menu-item">
+                <div class="logo-item">
+                    <div class="item3"></div>
+                </div>
+                <div class="context-item">Mua hang</div>
+            </div>
+            <div class="navbar-menu-item">
+                <div class="logo-item">
+                    <div class="item4"></div>
+                </div>
+                <div class="context-item">Danh muc khach hang</div>
+            </div>
+            <div class="navbar-menu-item">
+                <div class="logo-item">
+                    <div class="item5"></div>
+                </div>
+                <div class="context-item">Thiet lap he thong</div>
+            </div>
+        </div>
+    </div>
+    <div class="header">
+        <div class="brand">
+            <div class="combo-box">
+                <select class="brand-name" name="brand-name" id="brand-name">
+                    <option value="Nhà hàng Biển Đông">Nhà hàng Biển Đông</option>
+                    <option value="Nhà hàng Hải Dương">Nhà hàng Hải Dương</option>
+                    <option value="Nhà hàng Đội Cấn">Nhà hàng Đội Cấn</option>
+                    <option value="Nhà hàng Cầu Giấy">Nhà hàng Cầu Giấy</option>
+                </select>
+            </div>
+        </div>
+        <div class="user">
+            <div class="user-image"></div>
+            Nguyễn Văn Mạnh
+            <div class="extend"></div>
+        </div>
+    </div>
+    <div class="content">
+        <p class="list-name">Danh sách khách hàng</p>
+        <button class="btn-them">
+            <div class="icon-them"></div>
+            Thêm khách hàng
+        </button>
+        <div class="search">
+            <div class="search-icon"></div>
+            <input type="text"
+                   id="input-search"
+                   placeholder="Tìm kiếm theo mã, Tên khác" />
+        </div>
+        <div class="reload"></div>
+        <div class="grid">
+            <table id="tblListCustomer" class="table" width="100%" border="0">
+                <thead>
+                    <tr>
+                        <th>Mã khách hàng</th>
+                        <th>Họ và tên</th>
+                        <th>Giới tính</th>
+                        <th>Ngày sinh</th>
+                        <th>Nhóm khách hàng</th>
+                        <th>Điện thoại</th>
+                        <th>Email</th>
+                        <th>Số tiền nợ</th>
+                        <th>Đang hoạt động</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>MF3213</td>
+                        <td>Ngọc Dũng</td>
+                        <td>Nam</td>
+                        <td>12/11/2000</td>
+                        <td>Khách VIP</td>
+                        <td>086834090</td>
+                        <td>dungbachngoc20@gmail.com</td>
+                        
+                    </tr>
+                    <tr>
+                        <td>MF3213</td>
+                        <td>Ngọc Dũng</td>
+                        <td>Nam</td>
+                        <td>12/11/2000</td>
+                        <td>Khách VIP</td>
+                        <td>086834090</td>
+                        <td>dungbachngoc20@gmail.com</td>
+                        
+                    </tr>
+                    <tr>
+                        <td>MF3213</td>
+                        <td>Ngọc Dũng</td>
+                        <td>Nam</td>
+                        <td>12/11/2000</td>
+                        <td>Khách VIP</td>
+                        <td>086834090</td>
+                        <td>dungbachngoc20@gmail.com</td>
+                        
+                    </tr>
+                </tbody>
+            </table>
+            <div class="hienthi">
+                <p class="hienthi1">Hiển thị 1-10/1000 Khách hàng</p>
+                <div class="btn-page">
+                    <div class="button"></div>
+                    <div class="button"></div>
+                    <a href="#" class="num1">1</a>
+                    <a href="#" class="num2">2</a>
+                    <a href="#" class="num3">3</a>
+                    <a href="#" class="num4">4</a>
+                    <div class="button1"></div>
+                    <div class="button2"></div>
+                </div>
+                <p class="hienthi2">10 Khách hàng/trang</p>
+            </div>
+        </div>
+    </div>
+    <div class="dialog" hidden="0">
+        <div class="model"></div>
+        <div class="dialog-content">
+            <div class="header">
+                <h2>THÔNG TIN KHÁCH HÀNG</h2>
+                <button class="exit">&#10006</button>
+            </div>
+            <div class="body">
+                <div class="img"></div>
+                <p class="notify">Vui lòng chọn ảnh có định dạng <br>.jpg .jpeg .png .gif</p>
+                <div class="inform1">
+                    <div class="line1">
+                        <div class="line1-left">
+                            <label for="ma">Mã khách hàng</label><br>
+                            <input type="text" name="" id="txtCustomerCode">
+                        </div>
+                        <div class="line1-right">
+                            <label for="ten">Họ và tên</label><br>
+                            <input type="text" name="" id="txtFullName">
+                        </div>
+                    </div>
+                    <div class="line2">
+                        <div class="line2-left">
+                            <label for="mathe">Mã thẻ thành viên</label><br>
+                            <input type="text" name="" id="mathe">
+                        </div>
+                        <div class="line2-right">
+                            <label for="nhom">Nhóm khách hàng</label><br>
+                            <select name="" id="nhom"></select>
+                        </div>
+                    </div>
+                    <div class="line3">
+                        <div class="line3-left">
+                            <label for="ngaysinh">Ngày sinh</label><br>
+                            <input type="date" name="" id="ngaysinh">
+                        </div>
+                        <div class="line3-right">
+                            <label for="ten">Giới tính</label><br>
+                            <div class="radio-btn">
+                                <input type="radio" id="male" name="gender">
+                                <label for="male">Nam</label><br>
+                                <input type="radio" id="female" name="gender">
+                                <label for="female">Nữ</label><br>
+                                <input type="radio" id="different" name="gender">
+                                <label for="different">Khác</label><br>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="body2">
+                <div class="line1">
+                    <div class="line1-left">
+                        <label for="email">Email</label><br>
+                        <input type="email" name="" id="email" placeholder="example@domain.com">
+                    </div>
+                    <div class="line1-right">
+                        <label for="sdt">SDT</label><br>
+                        <input type="tel" name="" id="sdt">
+                    </div>
+                </div>
+                <div class="line2">
+                    <div class="line2-left">
+                        <label for="tencty">Tên công ty</label><br>
+                        <input type="text" name="" id="tencty">
+                    </div>
+                    <div class="line2-right">
+                        <label for="msthue">Mã số thuế</label><br>
+                        <input type="text" name="" id="msthue" placeholder="Mã số thuế của công ty">
+                    </div>
+                </div>
+                <div class="line3">
+                    <label for="address">Địa chỉ</label><br>
+                    <input type="text" id="address">
+                </div>
+            </div>
+            <div class="footer">
+                <button class="cancel">Hủy</button>
+                <button id = "btnSave"class="btn-save"></button>
+            </div>
+        </div>
+
+    </div>
+    <script src="../content/jquery-3.6.0.min.js"></script>
+    <script src="/js/page/customer.js"></script>
+</body>
+</html>
