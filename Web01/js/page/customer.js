@@ -14,19 +14,26 @@ function setEvent() {
     $('.dialog').hide();
   });
 
-  $('#tblListCustomer tbody').on('dblclick', 'tr', function () {
-    var row = this;
-    $('#txtCustomerCode').val(row.cells[0].innerHTML);
-    $('#txtFullName').val(row.cells[1].innerHTML);
-    var gender = row.cells[2].innerHTML;
+  $('#tblListCustomer tbody tr').on('dblclick', 'td', function (e) {
+    var row = e.target.parentNode;
+    var tmp = [];
+    tmp = row.getElementsByTagName('td');
+    var customer = [];
+    for (var i = 0; i < tmp.length; i++) {
+      customer.push(tmp[i].innerHTML);
+    }
+    var [CustomerCode, FullName, gender, date, nhomKH, sdt, email] = customer;
+    $('#txtCustomerCode').val(CustomerCode);
+    $('#txtFullName').val(FullName);
     if (gender == 'Nam') {
       $('#male').attr('checked', 'checked');
     } else if (gender == 'Nữ') {
       $('#female').attr('checked', 'checked');
     }
-    var date = row.cells[3].innerHTML;
     var dateRes = date.split('/');
     $('#ngaysinh').attr('value', `${dateRes[2]}-${dateRes[1]}-${dateRes[0]}`);
+    $('#sdt').val(sdt);
+    $('#email').val(email);
     $('.dialog').show();
     //biding dữ liệu
   });
@@ -35,9 +42,20 @@ function setEvent() {
     //Thu thập thông tin của khách hàng
     var customerCode = $('#txtCustomerCode').val();
     var fullName = $('#txtFullName').val();
+    //Xử lý ngày tháng
+    var date = $('#ngaysinh').val();
+    var dateRes = date.split('-');
+    console.log(dateRes);
+    var date2 = new Date(`${dateRes[0]}-${dateRes[1]}-${dateRes[2]}`);
+    console.log(date2);
+    var sdt = $('#sdt').val();
+    var email = $('#email').val();
     var newCustomer = {
       CustomerCode: customerCode,
       FullName: fullName,
+      DateOfBirth: new Date(`${dateRes[0]}-${dateRes[1]}-${dateRes[2]}`),
+      Email: email,
+      PhoneNumber: sdt,
     };
     //gọi service lưu lại
     $.ajax({

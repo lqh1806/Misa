@@ -129,6 +129,38 @@
       "CustomerCode": "HUNGDZ",
       "FullName": "LEQuOCHUNG",
       "id": "IpYyEEQ"
+    },
+    {
+      "CustomerCode": "HEHEHEHE",
+      "FullName": "Le Hung",
+      "DateOfBirth": null,
+      "Email": "lequochung1806@yahoo.com",
+      "PhoneNumber": "64123123",
+      "id": "XchBhjT"
+    },
+    {
+      "CustomerCode": "ABCVD",
+      "FullName": "BABY",
+      "DateOfBirth": "1930-10-11T17:00:00.000Z",
+      "Email": "abc@gmail.com",
+      "PhoneNumber": "31233",
+      "id": "dBBa43R"
+    },
+    {
+      "CustomerCode": "ádasdasd",
+      "FullName": "ádasdasd",
+      "DateOfBirth": "1921-09-10T17:00:00.000Z",
+      "Email": "ãcvzzxcvzx",
+      "PhoneNumber": "1312312",
+      "id": "D-qbR04"
+    },
+    {
+      "CustomerCode": "Á12123AS",
+      "FullName": "HDFA",
+      "DateOfBirth": "2021-03-26T00:00:00.000Z",
+      "Email": "lequochung1806@yahoo.com",
+      "PhoneNumber": "46456",
+      "id": "6mQ7A2P"
     }
   ]
 }
