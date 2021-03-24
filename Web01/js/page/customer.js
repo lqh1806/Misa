@@ -1,172 +1,140 @@
-$(document).ready(function () {
+$(document).ready(function(){
   loadData();
-  setEvent();
-});
+  setEvents();
+})
 
-function setEvent() {
-  //Gán sự kiện cho btn Add:
-
-  $('.btn-them').click(function () {
-    //Hiển thị dialog
+function setEvents() {
+  //Mo dialog
+  $('.btn-them').click(function(){
     $('.dialog').show();
-  });
-  $('.exit').click(function () {
+  })
+
+  //Dong dialog
+  $('.exit').click(function(){
     $('.dialog').hide();
-  });
+  })
 
-  $('#tblListCustomer tbody tr').on('dblclick', 'td', function (e) {
-    var row = e.target.parentNode;
-    var tmp = [];
-    tmp = row.getElementsByTagName('td');
-    var customer = [];
-    for (var i = 0; i < tmp.length; i++) {
-      customer.push(tmp[i].innerHTML);
-    }
-    var [CustomerCode, FullName, gender, date, nhomKH, sdt, email] = customer;
-    $('#txtCustomerCode').val(CustomerCode);
-    $('#txtFullName').val(FullName);
-    if (gender == 'Nam') {
-      $('#male').attr('checked', 'checked');
-    } else if (gender == 'Nữ') {
-      $('#female').attr('checked', 'checked');
-    }
-    var dateRes = date.split('/');
-    $('#ngaysinh').attr('value', `${dateRes[2]}-${dateRes[1]}-${dateRes[0]}`);
-    $('#sdt').val(sdt);
-    $('#email').val(email);
-    $('.dialog').show();
-    //biding dữ liệu
-  });
-
-  $(document).on('click', '#btnSave', function () {
-    //Thu thập thông tin của khách hàng
-    var customerCode = $('#txtCustomerCode').val();
-    var fullName = $('#txtFullName').val();
-    //Xử lý ngày tháng
-    var date = $('#ngaysinh').val();
-    var dateRes = date.split('-');
-    console.log(dateRes);
-    var date2 = new Date(`${dateRes[0]}-${dateRes[1]}-${dateRes[2]}`);
-    console.log(date2);
-    var sdt = $('#sdt').val();
-    var email = $('#email').val();
-    var newCustomer = {
-      CustomerCode: customerCode,
-      FullName: fullName,
-      DateOfBirth: new Date(`${dateRes[0]}-${dateRes[1]}-${dateRes[2]}`),
-      Email: email,
-      PhoneNumber: sdt,
-    };
-    //gọi service lưu lại
+  //Luu thong tin nguoi dung moi
+  $('#btnSave').click(function(){
+    var customer = getUserDataInput();
+    console.log(customer)
     $.ajax({
       method: 'POST',
-      // url: 'http://api.manhnv.net/api/customers',
-      url: 'http://localhost:3000/clients',
-      data: JSON.stringify(newCustomer),
+      url: "http://api.manhnv.net/api/customers",
       async: false,
-      contentType: 'application/json',
+      data: JSON.stringify(customer),
+      contentType: "application/json" 
+    }).done(function(response){
+      alert("Thanh cong");
+      $('.dialog').hide();
+      loadData();
+    }).fail(function(response){
+      alert(response.responseText);
     })
-      .done(function (response) {
-        alert('Success');
-      })
-      .fail(function (response) {
-        alert('Error');
-      });
-  });
-}
-/**
- * Load dữ liệu khách hàng
- * */
-function loadData() {
-  // lấy dữ liệu từ Api về;
-  var data = getData();
-  console.table(data);
-  buildDataTableHTML(data);
-  // Xử lý dữ liệu:
+  })
 }
 
 /**
- * Hàm thực hiện lấy dữ liệu
- * */
+ * Get data tu API
+ */
 function getData() {
-  var customers = null;
+  var customer = null;
   $.ajax({
     method: 'GET',
-    // url: 'http://api.manhnv.net/api/customers',
-    url: 'http://localhost:3000/clients',
-    data: null,
+    url: "http://api.manhnv.net/api/customers",
     async: false,
-    contentType: 'application/json',
+    data: null,
+    ceontentType: 'application/json'
+  }).done(function(response){
+    customer = response;
+  }).fail(function(response){
+    alert(response.responseText);
   })
-    .done(function (response) {
-      customers = response;
-    })
-    .fail(function (response) {
-      alert('Không thể lấy dữ liệu từ Api');
-    });
-  return customers;
+  console.log(customer);
+  return customer;
 }
 
 /**
- * Thực hiện build bằng dữ liệu tương ứng với dữ liệu lấy từ api
- * @param {Array} data
- * @returns
+ * Load data len table
  */
-
-function buildDataTableHTML(data) {
+function loadData(){
   $('#tblListCustomer tbody').html('');
-  //Lặp
-  $.each(data, function (index, customer) {
-    var dateOfBirth = customer.DateOfBirth;
-    var dateFormat = formatDateDDMMYYYY(dateOfBirth);
-    var money = 313212342342132;
-    var formatMoneyy = formatMoney(money);
-    var trHTML = `<tr>
-                      <td>${customer.CustomerCode}</td>
-                      <td>${customer.FullName}</td>
-                      <td>${customer.GenderName}</td>
-                      <td>${dateFormat}</td>
-                      <td>${customer.CustomerGroupName}</td>
-                      <td>${customer.PhoneNumber}</td>
-                      <td>${customer.Email}</td>
-                      <td>${formatMoneyy}</td>
-                      <td><input type="checkbox" checked></td>
-                    </tr>`;
+  var customer = getData();
+  $.each(customer, function(index, customer){
+    var dateFormat = formatDate(customer.DateOfBirth);
+    var trHTML = $(`
+      <tr>
+        <td>${customer.CustomerCode}</td>
+        <td>${customer.FullName}</td>
+        <td>${customer.GenderName}</td>
+        <td>${dateFormat}</td>
+        <td>${customer.CustomerGroupName}</td>
+        <td>${customer.PhoneNumber}</td>
+        <td>${customer.Email}</td>
+      </tr>
+    `);
     $('#tblListCustomer tbody').append(trHTML);
-  });
+  })
+
 }
 
 /**
- * Xử lí khi truyền ngày tháng vào sẽ trả về chuỗi tring có dạng ngày/tháng/năm
- * @param {Date} data
- * @returns
+ * Format date
  */
-function formatDateDDMMYYYY(date) {
-  if (!date) {
-    return '';
+function formatDate(date){
+  var date = new Date(date);
+  var dateString = date.getDate();
+  if(dateString < 10) dateString = "0" + dateString;
+  var monthString = date.getMonth() + 1;
+  if(monthString < 10)  monthString = "0" + monthString;
+  var yearString = date.getFullYear();
+  return `${dateString}-${monthString}-${yearString}`;
+}
+
+/**
+ * Get user data input
+ */
+function getUserDataInput(){
+  let customerCode = $('#txtCustomerCode').val();
+  let fullName = $('#txtFullName').val();
+  let groupName = $('#nhom option:selected').text();
+
+  let d = $('#ngaysinh').val().split('-').reverse();
+  console.log(d);
+  let date = new Date(d[2], d[1]-1, d[0]);
+
+  let gender = Number($('.radio-btn input:checked').val());
+  let genderName = null;
+  if(gender == 1){
+    genderName = "Nam"
   }
-  var newDate = new Date(date);
-  var dateString = newDate.getDate();
-  var monthString = newDate.getMonth() + 1;
-  var year = newDate.getFullYear();
-  if (dateString < 10) dateString = '0' + dateString;
-  if (monthString < 10) monthString = '0' + monthString;
-  return `${dateString}/${monthString}/${year}`;
-}
+  else if(gender == 0){
+    genderName = "Nữ"
+  }
+  else{
+    genderName = "Khác"
+  }
 
-/**
- * Xử lí hiển thị tiền tệ
- * @param {Number} money
- * @returns
- */
-function formatMoney(money) {
-  var moneyFormat = money.toLocaleString('vi', {
-    style: 'currency',
-    currency: 'VND',
-  });
-  return moneyFormat;
-}
+  let phone = $('#sdt').val();
+  let email = $("#email").val();
 
-function thoat() {
-  $('.dialog').hide();
+  let user = {
+        CustomerCode: customerCode,
+        FullName: fullName,
+        Gender: gender,
+        Address: "Trung Van",
+        DateOfBirth: date,
+        Email: email,
+        PhoneNumber: phone,
+        CustomerGroupId: "7a0b757e-41eb-4df6-c6f8-494a84b910f4",
+        DebitAmount: null,
+        MemberCardCode: null,
+        CompanyName: null,
+        CompanyTaxCode: null,
+        IsStopFollow: false,
+        CustomerGroupName: groupName,
+        GenderName: genderName,
+        MISAEntityState: 0
+  }
+  return user;
 }

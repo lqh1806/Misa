@@ -34,6 +34,10 @@
   background-color: darkolivegreen;
 }
 
+.content .btn-them:active{
+  background-color: rgb(5, 177, 168);
+}
+
 .content .btn-them .icon-them {
   width: 20px;
   height: 20px;
@@ -177,7 +181,13 @@
   border-radius: 50%;
   display: inline-block;
   text-align: center;
+  outline: none;
 }
+
+.content .hienthi .btn-page .num1:active{
+  background-color: aquamarine;
+}
+
 .content .hienthi .btn-page .num2 {
   width: 20px;
   height: 20px;
@@ -188,6 +198,11 @@
   background-color: rgb(170, 168, 168);
   text-decoration: none;
   color: black;
+  outline: none;
+}
+
+.content .hienthi .btn-page .num2:active{
+  background-color: aquamarine;
 }
 .content .hienthi .btn-page .num3 {
   width: 20px;
@@ -199,6 +214,10 @@
   background-color: rgb(170, 168, 168);
   text-decoration: none;
   color: black;
+  outline: none;
+}
+.content .hienthi .btn-page .num3:active{
+  background-color: aquamarine;
 }
 .content .hienthi .btn-page .num4 {
   width: 20px;
@@ -210,4 +229,8 @@
   background-color: rgb(170, 168, 168);
   text-decoration: none;
   color: black;
+  outline: none;
+}
+.content .hienthi .btn-page .num4:active{
+  background-color: aquamarine;
 }

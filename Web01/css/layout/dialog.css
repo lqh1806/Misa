@@ -247,6 +247,10 @@
   background-color: gray;
 }
 
+.dialog .dialog-content .footer .cancel:active{
+  background-color: bisque;
+}
+
 .dialog .dialog-content .footer .btn-save {
   width: 80px;
   height: 30px;
@@ -259,4 +263,9 @@
   background-position: center;
   border: none;
   cursor: pointer;
+  outline: none;
+}
+
+.dialog .dialog-content .footer .btn-save:active{
+  background-color: aqua;
 }
