@@ -78,6 +78,7 @@
                    placeholder="Tìm kiếm theo mã, Tên khác" />
         </div>
         <div class="reload"></div>
+        <button class="delete">&#10006</button>
         <div class="grid">
             <table id="tblListCustomer" class="table" width="100%" border="0">
                 <thead>
@@ -123,21 +124,21 @@
                         
                     </tr>
                 </tbody>
-            </table>
-            <div class="hienthi">
-                <p class="hienthi1">Hiển thị 1-10/1000 Khách hàng</p>
-                <div class="btn-page">
-                    <div class="button"></div>
-                    <div class="button"></div>
-                    <button href="#" class="num1">1</button>
-                    <button href="#" class="num2">2</button>
-                    <button href="#" class="num3">3</button>
-                    <button href="#" class="num4">4</button>
-                    <div class="button1"></div>
-                    <div class="button2"></div>
-                </div>
-                <p class="hienthi2">10 Khách hàng/trang</p>
+            </table> 
+        </div>
+        <div class="hienthi">
+            <p class="hienthi1">Hiển thị 1-10/1000 Khách hàng</p>
+            <div class="btn-page">
+                <div class="button"></div>
+                <div class="button"></div>
+                <button href="#" class="num1">1</button>
+                <button href="#" class="num2">2</button>
+                <button href="#" class="num3">3</button>
+                <button href="#" class="num4">4</button>
+                <div class="button1"></div>
+                <div class="button2"></div>
             </div>
+            <p class="hienthi2">10 Khách hàng/trang</p>
         </div>
     </div>
     <div class="dialog" hidden="0">
@@ -171,6 +172,8 @@
                             <select name="" id="nhom">
                                 <option value="Khách thường">Khách thường</option>
                                 <option value="VIP">VIP</option>
+                                <option value="VL">Khách vãng lai</option>
+                                <option value="Misa">Nhóm khách hàng MISA</option>
                             </select>
                         </div>
                     </div>

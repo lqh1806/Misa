@@ -34,7 +34,7 @@
   background-color: darkolivegreen;
 }
 
-.content .btn-them:active{
+.content .btn-them:active {
   background-color: rgb(5, 177, 168);
 }
 
@@ -82,16 +82,34 @@
   right: 16px;
 }
 
+.content .delete {
+  position: absolute;
+  width: 40px;
+  height: 32px;
+  background-color: red;
+  border: none;
+  top: 58px;
+  right: 66px;
+  outline: none;
+}
+
+.content .delete:active {
+  background-color: rgb(180, 24, 24);
+}
+
 .content .grid {
-  height: 500px;
+  position: absolute;
   overflow-y: scroll;
+  left: 16px;
+  right: 16px;
+  bottom: 50px;
+  top: 101px;
 }
 
 .content table {
   width: 100%;
   border-collapse: collapse;
   margin-top: 16px;
-  margin-left: 16px;
 }
 
 .content table th {
@@ -184,7 +202,7 @@
   outline: none;
 }
 
-.content .hienthi .btn-page .num1:active{
+.content .hienthi .btn-page .num1:active {
   background-color: aquamarine;
 }
 
@@ -201,7 +219,7 @@
   outline: none;
 }
 
-.content .hienthi .btn-page .num2:active{
+.content .hienthi .btn-page .num2:active {
   background-color: aquamarine;
 }
 .content .hienthi .btn-page .num3 {
@@ -216,7 +234,7 @@
   color: black;
   outline: none;
 }
-.content .hienthi .btn-page .num3:active{
+.content .hienthi .btn-page .num3:active {
   background-color: aquamarine;
 }
 .content .hienthi .btn-page .num4 {
@@ -231,6 +249,10 @@
   color: black;
   outline: none;
 }
-.content .hienthi .btn-page .num4:active{
+.content .hienthi .btn-page .num4:active {
   background-color: aquamarine;
+}
+
+.tr-background {
+  background-color: blanchedalmond;
 }
