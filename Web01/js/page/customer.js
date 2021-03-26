@@ -3,6 +3,9 @@ $(document).ready(function () {
   setEvents();
 });
 
+var modifiedID = null;
+var formMode = null;
+
 function setEvents() {
   //Mo dialog
   $('.btn-them').click(function () {
@@ -18,9 +21,16 @@ function setEvents() {
   $('#btnSave').click(function () {
     var customer = getUserDataInput();
     console.log(customer);
+    var url = 'http://api.manhnv.net/api/customers';
+    var method = 'POST';
+    if (formMode == 1) {
+      customer.CustomerId = modifiedID;
+      url = 'http://api.manhnv.net/api/customers/' + modifiedID;
+      method = 'PUT';
+    }
     $.ajax({
-      method: 'POST',
-      url: 'http://api.manhnv.net/api/customers',
+      method: method,
+      url: url,
       async: false,
       data: JSON.stringify(customer),
       contentType: 'application/json',
@@ -36,7 +46,7 @@ function setEvents() {
   });
 
   //Click 1 dòng của table để chuyển màu
-  $('table tbody tr').click(function () {
+  $(document).on('click', 'table#tblListCustomer tbody tr', function () {
     $(this).siblings('.tr-background').removeClass('tr-background');
     $(this).addClass('tr-background');
   });
@@ -66,6 +76,8 @@ function setEvents() {
 
 function rowOnDblClick() {
   var id = $(this).data('recordID');
+  formMode = 1;
+  modifiedID = id;
   $.ajax({
     method: 'GET',
     url: 'http://api.manhnv.net/api/customers/' + id,
@@ -214,6 +226,7 @@ function getUserDataInput() {
   let email = $('#email').val();
 
   let user = {
+    CustomerId: null,
     CustomerCode: customerCode,
     FullName: fullName,
     Gender: gender,
